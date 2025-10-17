@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Página de práctica</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card" aria-labelledby="titulo">
+    <header class="header">
+      <h1 id="titulo">Bienvenidos a Mi Evidencia del Parcia</h1>
+
+      <!-- Botón cambiar tema con íconos SVG -->
+      <button id="swap" class="swap" type="button" aria-label="Cambiar tema">
+        <!-- Sol -->
+        <svg class="sun" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 4V2m0 20v-2M4.22 4.22 2.81 2.81m18.38 18.38-1.41-1.41M4 12H2m20 0h-2M4.22 19.78 2.81 21.19m18.38-18.38-1.41 1.41" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="4" fill="currentColor"/>
+        </svg>
+        <!-- Luna -->
+        <svg class="moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" fill="currentColor"/>
+        </svg>
+        <span class="swap-text">Cambiar Tema</span>
+      </button>
+    </header>
+
+    <section class="content">
+      <h2>Sobre mí</h2>
+      <p class="muted">Fernanda Lizeth Flores Martinez-22685, Evidencia 2 Parcial 2. Arquitecura de software</p>
+
+      <div class="divider"></div>
+
+      <h2>Servicios</h2>
+      <div class="chips" role="list">
+        <div class="chip" role="listitem">
+          <!-- Monitor / Diseño web -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 5h18v11H3zM8 21h8m-4-5v5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Diseño Web</span>
+        </div>
+        <div class="chip" role="listitem">
+          <!-- </> / Frontend -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M8 9 4 12l4 3M16 9l4 3-4 3M13 5l-2 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Desarrollo Frontend</span>
+        </div>
+        <div class="chip" role="listitem">
+          <!-- Lupa / SEO -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="m20 20-3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span>Optimización SEO</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>Contacto</h2>
+      <form id="contacto" novalidate>
+        <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
+        <input id="correo" name="correo" type="email" placeholder="Tu correo" required>
+        <button class="primary" type="submit" id="enviar">Enviar</button>
+        <div id="toast" class="toast" role="status" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
