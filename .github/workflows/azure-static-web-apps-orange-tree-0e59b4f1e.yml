@@ -24,16 +24,16 @@ jobs:
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ORANGE_TREE_0E59B4F1E }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: "upload"
+  azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ORANGE_TREE_0E59B4F1E }}
+  repo_token: ${{ secrets.GITHUB_TOKEN }}
+  action: "upload"
 
-          # --- Configuración del sitio estático ---
-          app_location: "/"        # aquí está tu index.html
-          api_location: ""         # no usas API
-          output_location: ""      # vacío: no hay carpeta de "build"
-          app_build_command: "true"  # NO construir, solo subir
-          # ---------------------------------------
+  # Configuración correcta para sitio HTML/CSS/JS sin build
+  app_location: "/"        # carpeta raíz (aquí está index.html)
+  api_location: ""         # no hay API
+  output_location: ""      # vacío = sin carpeta de build
+  skip_app_build: true     # ⚠️ clave para no compilar con Node u Oryx
+
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
@@ -45,4 +45,5 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ORANGE_TREE_0E59B4F1E }}
           action: "close"
+
 
